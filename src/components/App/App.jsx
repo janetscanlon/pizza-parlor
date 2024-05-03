@@ -59,7 +59,7 @@ function App() {
         <Route exact path ='/customerinfo'>
           <CustomerForm />
         </Route>
-        
+
       </Router>
     </div>
   );
