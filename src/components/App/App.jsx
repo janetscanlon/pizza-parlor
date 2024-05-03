@@ -5,9 +5,10 @@ import './App.css';
 //import the things we need 
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect ,useState} from 'react'
-import PizzaList from '../PizzaList/PizzaList'
+import { HashRouter as Router, Route, Link } from 'react-router-dom/cjs/react-router-dom.min';
+import CustomerForm from './CustomerForm'
 //import components here! 
-
+import PizzaList from '../PizzaList/PizzaList'
 
 function App() {
 
@@ -44,16 +45,21 @@ function App() {
   }
   return (
     <div className='App'>
-       <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-        <Router>
+      <Router>
+        <header className='App-header'>
+          <h1 className='App-title'>Prime Pizza</h1>
+        </header>
         <main>
         <img src='images/pizza_photo.png' />
         <PizzaList fetchPizzas={fetchPizzas}/>
         <p>Pizza is great.</p>
         <PizzaList/>
         </main>
+
+        <Route exact path ='/customerinfo'>
+          <CustomerForm />
+        </Route>
+        
       </Router>
     </div>
   );
